@@ -145,24 +145,3 @@ debug         = false
 inherits      = "release"
 strip         = false
 debug         = true
-[package]
-name = "mohu-py"
-version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
-
-[lib]
-name = "_mohu"
-crate-type = ["cdylib"]
-
-[dependencies]
-mohu-core = { workspace = true }
-mohu-ops = { workspace = true }
-pyo3 = { workspace = true, features = ["abi3-py310"] }
-pyo3-ffi = "0.23"
-libc = { workspace = true }
-
-[target.'cfg(not(target_env = "msvc"))'.dependencies]
-tikv-jemallocator = "0.6"
